@@ -36,7 +36,7 @@ func main() {
 		opts.InitialObjects, emptyBuckets = generateObjectsFromFiles(logger, cfg.Seed)
 	}
 
-	server, err := fakestorage.NewServerWithOptions(opts)
+	server, err := fakestorage.NewStorageServer(opts)
 	if err != nil {
 		logger.WithError(err).Fatal("couldn't start the server")
 	}
